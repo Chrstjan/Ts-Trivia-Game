@@ -1,3 +1,3 @@
-import { getDummyData } from "./Components/app.js";
+import { initPage } from "./Components/app.js";
 
-getDummyData();
+initPage();

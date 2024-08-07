@@ -1,7 +1,5 @@
-import { myFetchData } from "../Utils/apiUtils.js";
+import { buildLanding } from "./buildLanding.js";
 
-export const getDummyData = async () => {
-  const endpoint: string = "https://dummyjson.com/recipes?limit=5";
-  const data = await myFetchData(endpoint);
-  console.log(data);
+export const initPage = () => {
+  buildLanding();
 };
