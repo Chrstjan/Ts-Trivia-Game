@@ -83,6 +83,11 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  color: #ffffff;
+}
+.setup-container .game-header {
+  margin-bottom: 4rem;
+  text-align: center;
 }
 .setup-container .questions-container {
   display: flex;
@@ -122,7 +127,8 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.6rem 0.7rem;
+  padding: 0.6rem 2rem;
+  overflow-x: hidden;
 }
 .cards-container .question-cards {
   display: flex;
@@ -130,7 +136,17 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.6rem 0.7rem;
+  padding: 0.6rem 2rem;
+  border-radius: 5px;
+}
+.cards-container .question-cards.question-answered-correctly {
+  background: green;
+}
+.cards-container .question-cards.question-answered-incorrectly {
+  background: red;
+}
+.cards-container .question-cards header {
+  color: #eee;
 }
 
 html {
@@ -154,5 +170,6 @@ body {
   align-items: center;
   gap: 1rem;
   background: linear-gradient(#20687e, #49a8c6);
+  overflow-x: hidden;
   position: relative;
 }

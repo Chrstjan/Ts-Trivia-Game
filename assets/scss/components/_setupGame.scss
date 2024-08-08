@@ -5,6 +5,12 @@
 .setup-container {
   height: 100vh;
   @include m.flexBox(column, center, center);
+  color: v.$main-text-color;
+
+  .game-header {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
 
   .questions-container {
     @include m.flexBox(column, center, center);

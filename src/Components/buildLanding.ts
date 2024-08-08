@@ -8,6 +8,7 @@ landingContainer.classList.add("landing-container");
 export const buildLanding = () => {
   if (app) {
     clearApp(app);
+    clearApp(landingContainer);
 
     let landingView = `
     <header class="game-header">

@@ -13,6 +13,7 @@ setupContainer.classList.add("setup-container");
 export const buildGameSetup = () => {
   if (app) {
     clearApp(app);
+    clearApp(setupContainer);
 
     let questionsInput = `
     <header class="game-header">
