@@ -7,6 +7,8 @@ let difficulty: string;
 let type: string;
 
 const app = document.getElementById("app");
+const setupContainer = document.createElement("div");
+setupContainer.classList.add("setup-container");
 
 export const buildGameSetup = () => {
   if (app) {
@@ -55,7 +57,8 @@ export const buildGameSetup = () => {
         </span>
     </div>
     <input type="submit" id="start-game" value="Start Game">`;
-    app.innerHTML += questionsInput;
+    setupContainer.innerHTML += questionsInput;
+    app.appendChild(setupContainer);
 
     const categorySelect = document.getElementById("category");
     categorySelect?.addEventListener("change", (e) => {

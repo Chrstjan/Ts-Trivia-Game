@@ -2,6 +2,8 @@ import { clearApp } from "./app.js";
 import { buildGameSetup } from "./buildSetup.js";
 
 const app = document.getElementById("app");
+const landingContainer = document.createElement("div");
+landingContainer.classList.add("landing-container");
 
 export const buildLanding = () => {
   if (app) {
@@ -10,12 +12,13 @@ export const buildLanding = () => {
     let landingView = `
     <header class="game-header">
         <h1 class="trivia-header">Trivia the game</h1>
-        <h4>Test your knowledge</h4>
+        <h3>Test your knowledge</h3>
     </header>
     <button class="game-btn" id="setup-game-btn">Setup Game</button>
     <button class="game-btn" id="leaderboard-btn">Leaderboard</button>`;
 
-    app.innerHTML += landingView;
+    landingContainer.innerHTML += landingView;
+    app.appendChild(landingContainer);
 
     const setupBtn = document.getElementById(
       "setup-game-btn"

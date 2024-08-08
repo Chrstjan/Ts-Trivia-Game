@@ -1,25 +1,34 @@
 @use "../helpers/mixins" as m;
 @use "../helpers/variables" as v;
 @use "../helpers/placeholders";
+@use "../components/animations";
 
-.game-header {
-  @extend %header-reset;
+.landing-container {
+  height: 100vh;
+  @include m.flexBox(column, center, center);
 
-  .trivia-header {
-    position: absolute;
-    top: 4%;
-    left: 50%;
-    transform: translate(-50%);
+  .game-header {
+    @extend %header-reset;
+
+    .trivia-header {
+      font-size: 33px;
+      width: 300px;
+      position: absolute;
+      top: 3%;
+      left: 10%;
+      transform: translate(-50%);
+      animation: titleSpin 4s infinite linear;
+    }
+
+    h3 {
+      position: absolute;
+      top: 14%;
+      left: 50%;
+      transform: translate(-50%);
+    }
   }
 
-  h4 {
-    position: absolute;
-    top: 8%;
-    left: 50%;
-    transform: translate(-50%);
+  .game-btn {
+    @extend %btn-reset;
   }
-}
-
-.game-btn {
-  @extend %btn-reset;
 }

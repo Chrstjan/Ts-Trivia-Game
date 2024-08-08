@@ -1,9 +1,9 @@
-.game-header {
+.landing-container .game-header {
   color: #ffffff;
   text-align: center;
 }
 
-#start-game, .game-btn {
+.setup-container #start-game, .landing-container .game-btn {
   border: 0;
   background: transparent;
   font-size: 22px;
@@ -12,55 +12,125 @@
   border-radius: 5px;
 }
 
-.select-container .options-container .game-setup {
+.setup-container .select-container .options-container .game-setup {
   padding: 0.3rem 2.7rem;
   border-radius: 6px;
 }
 
-.game-header .trivia-header {
-  position: absolute;
-  top: 4%;
-  left: 50%;
-  transform: translate(-50%);
-}
-.game-header h4 {
-  position: absolute;
-  top: 8%;
-  left: 50%;
-  transform: translate(-50%);
+@-webkit-keyframes titleSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
-.questions-container {
+@keyframes titleSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.landing-container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
 }
-.questions-container #questions-amount {
+.landing-container .game-header .trivia-header {
+  font-size: 33px;
+  width: 300px;
+  position: absolute;
+  top: 3%;
+  left: 10%;
+  transform: translate(-50%);
+  -webkit-animation: titleSpin 4s infinite linear;
+          animation: titleSpin 4s infinite linear;
+}
+.landing-container .game-header h3 {
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.setup-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.setup-container .questions-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.setup-container .questions-container #questions-amount {
   width: 77%;
   border: none;
   background: #eee;
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
 }
-
-.select-container {
+.setup-container .select-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
 }
-.select-container .options-container {
+.setup-container .select-container .options-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
 }
-#start-game {
+.setup-container #start-game {
   margin-top: 2.5rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.7rem;
+}
+.cards-container .question-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.7rem;
 }
 
 html {
@@ -84,6 +154,5 @@ body {
   align-items: center;
   gap: 1rem;
   background: linear-gradient(#20687e, #49a8c6);
-  height: 100vh;
   position: relative;
 }

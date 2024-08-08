@@ -1,0 +1,13 @@
+@use "../helpers/mixins" as m;
+@use "../helpers/variables" as v;
+@use "../helpers/placeholders";
+
+.cards-container {
+  @include m.flexBox(column, center, center);
+  padding: 0.6rem 0.7rem;
+
+  .question-cards {
+    @include m.flexBox(column, center, center);
+    padding: 0.6rem 0.7rem;
+  }
+}

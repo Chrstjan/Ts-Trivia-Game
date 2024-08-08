@@ -8,7 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { clearApp } from "./app.js";
+import { buildLanding } from "./buildLanding.js";
 const app = document.getElementById("app");
+const cardsContainer = document.createElement("div");
+cardsContainer.classList.add("cards-container");
 export const buildQuestion = (questions) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(questions);
     if (app) {
@@ -19,7 +22,7 @@ export const buildQuestion = (questions) => __awaiter(void 0, void 0, void 0, fu
             console.log(question);
             console.log(index);
             let questionCards = `
-        <div>
+        <span class="question-cards">
             <header>
                 <h2>Question: ${question.question}</h2>
                 <h3>Category: ${question.category}</h3>
@@ -28,8 +31,13 @@ export const buildQuestion = (questions) => __awaiter(void 0, void 0, void 0, fu
                 <button class="answer-btn" data-answer="True" data-index="${index}">True</button>
                 <button class="answer-btn" data-answer="False" data-index="${index}">False</button>
             </span>
-        </div>`;
-            app.innerHTML += questionCards;
+        </span>`;
+            cardsContainer.innerHTML += questionCards;
+            app.appendChild(cardsContainer);
+        });
+        const goBackBtn = document.getElementById("back-btn");
+        goBackBtn === null || goBackBtn === void 0 ? void 0 : goBackBtn.addEventListener("click", () => {
+            buildLanding();
         });
         const answerBtns = document.querySelectorAll(".answer-btn");
         answerBtns.forEach((btn) => {
