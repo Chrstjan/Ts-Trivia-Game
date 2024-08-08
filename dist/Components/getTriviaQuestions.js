@@ -8,8 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { myFetchData } from "../Utils/apiUtils.js";
+import { buildQuestion } from "./buildQuestion.js";
 export const getTriviaQuestions = (amount, category, difficulty, type) => __awaiter(void 0, void 0, void 0, function* () {
     const endpoint = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`;
     const data = yield myFetchData(endpoint);
+    buildQuestion(data);
     console.log(data);
 });

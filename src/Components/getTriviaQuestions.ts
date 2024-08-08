@@ -1,4 +1,5 @@
 import { myFetchData } from "../Utils/apiUtils.js";
+import { buildQuestion } from "./buildQuestion.js";
 
 export const getTriviaQuestions = async (
   amount: number,
@@ -8,5 +9,6 @@ export const getTriviaQuestions = async (
 ) => {
   const endpoint = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`;
   const data = await myFetchData(endpoint);
+  buildQuestion(data);
   console.log(data);
 };

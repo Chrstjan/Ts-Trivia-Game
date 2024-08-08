@@ -69,6 +69,14 @@ export const buildGameSetup = () => {
       }
     });
 
+    const questionsAmount = document.getElementById("questions-amount");
+    questionsAmount?.addEventListener("change", (e) => {
+      amount = e.target.value;
+      if (amount === null || 0) {
+        amount = 1;
+      }
+    });
+
     const difficultySelect = document.getElementById("difficulty");
     difficultySelect?.addEventListener("change", (e) => {
       difficulty = e.target.value;
@@ -90,7 +98,7 @@ export const buildGameSetup = () => {
 
     const startBtn = document.getElementById("start-game");
     startBtn?.addEventListener("click", () => {
-      getTriviaQuestions(60, category, difficulty, type);
+      getTriviaQuestions(amount, category, difficulty, type);
     });
   }
 };
