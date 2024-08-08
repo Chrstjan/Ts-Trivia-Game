@@ -1,4 +1,6 @@
 @use "./pages/landing.scss";
+@use "./helpers/mixins" as m;
+@use "./helpers/variables" as v;
 
 html {
   scroll-behavior: smooth;
@@ -13,4 +15,14 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: sans-serif, Arial, Helvetica;
+
+  #app {
+    @include m.flexBox(column, center, center, 1rem);
+    background: linear-gradient(
+      v.$linear-background-first,
+      v.$linear-background-last
+    );
+    height: 100vh;
+    position: relative;
+  }
 }

@@ -1,3 +1,68 @@
+.game-header {
+  color: #ffffff;
+  text-align: center;
+}
+
+#start-game, .game-btn {
+  border: 0;
+  background: transparent;
+  font-size: 22px;
+  background: #eee;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+}
+
+.select-container .options-container .game-setup {
+  padding: 0.3rem 2.7rem;
+  border-radius: 6px;
+}
+
+.game-header .trivia-header {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.game-header h4 {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.questions-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.questions-container #questions-amount {
+  width: 77%;
+  border: none;
+  background: #eee;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.select-container .options-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+#start-game {
+  margin-top: 2.5rem;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -11,4 +76,14 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: sans-serif, Arial, Helvetica;
+}
+.main-container #app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(#20687e, #49a8c6);
+  height: 100vh;
+  position: relative;
 }

@@ -1,2 +1,24 @@
-//The landing view code will be here
-export const buildLanding = () => { };
+import { clearApp } from "./app.js";
+import { buildGameSetup } from "./buildSetup.js";
+const app = document.getElementById("app");
+export const buildLanding = () => {
+    if (app) {
+        clearApp(app);
+        let landingView = `
+    <header class="game-header">
+        <h1 class="trivia-header">Trivia the game</h1>
+        <h4>Test your knowledge</h4>
+    </header>
+    <button class="game-btn" id="setup-game-btn">Setup Game</button>
+    <button class="game-btn" id="leaderboard-btn">Leaderboard</button>`;
+        app.innerHTML += landingView;
+        const setupBtn = document.getElementById("setup-game-btn");
+        setupBtn === null || setupBtn === void 0 ? void 0 : setupBtn.addEventListener("click", () => {
+            buildGameSetup();
+        });
+        const leaderboardBtn = document.getElementById("leaderboard-btn");
+        leaderboardBtn.addEventListener("click", () => {
+            console.log("Funny Haha");
+        });
+    }
+};

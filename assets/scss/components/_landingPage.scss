@@ -1,0 +1,25 @@
+@use "../helpers/mixins" as m;
+@use "../helpers/variables" as v;
+@use "../helpers/placeholders";
+
+.game-header {
+  @extend %header-reset;
+
+  .trivia-header {
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  h4 {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+.game-btn {
+  @extend %btn-reset;
+}
