@@ -17,24 +17,6 @@
   border-radius: 6px;
 }
 
-@-webkit-keyframes titleSpin {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(30deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  75% {
-    transform: rotate(-30deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 @keyframes titleSpin {
   0% {
     transform: rotate(0deg);
@@ -67,8 +49,7 @@
   top: 3%;
   left: 10%;
   transform: translate(-50%);
-  -webkit-animation: titleSpin 4s infinite linear;
-          animation: titleSpin 4s infinite linear;
+  animation: titleSpin 4s infinite linear;
 }
 .landing-container .game-header h3 {
   position: absolute;

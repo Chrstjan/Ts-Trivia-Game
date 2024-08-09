@@ -7,10 +7,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { myFetchData } from "../Utils/apiUtils.js";
-import { receivedQuestions } from "./receivedQuestions.js";
-export const getTriviaQuestions = (amount, category, difficulty, type) => __awaiter(void 0, void 0, void 0, function* () {
-    const endpoint = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`;
-    const data = yield myFetchData(endpoint);
-    receivedQuestions(data);
+import { buildQuestion } from "./buildQuestion.js";
+export const receivedQuestions = (questions) => __awaiter(void 0, void 0, void 0, function* () {
+    let userPoints = 0;
+    let scoreMultiplyer = 1;
+    console.log(questions);
+    buildQuestion(questions, userPoints, scoreMultiplyer);
 });

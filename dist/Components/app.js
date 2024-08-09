@@ -5,3 +5,5 @@ export const initPage = () => {
 export const clearApp = (container) => {
     container.innerHTML = "";
 };
+export const createUser = () => {
+};

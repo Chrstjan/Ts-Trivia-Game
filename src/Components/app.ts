@@ -7,3 +7,7 @@ export const initPage = () => {
 export const clearApp = (container: HTMLElement) => {
   container.innerHTML = "";
 };
+
+export const createUser = () => {
+  
+}

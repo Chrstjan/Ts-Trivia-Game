@@ -12,13 +12,16 @@ import { buildLanding } from "./buildLanding.js";
 const app = document.getElementById("app");
 const cardsContainer = document.createElement("div");
 cardsContainer.classList.add("cards-container");
-export const buildQuestion = (questions) => __awaiter(void 0, void 0, void 0, function* () {
+export const buildQuestion = (questions, userScore, multiplyer) => __awaiter(void 0, void 0, void 0, function* () {
+    let correctAnswerStreak = 0;
     console.log(questions);
     if (app) {
         clearApp(app);
         clearApp(cardsContainer);
         let backBtn = `<button id="back-btn">Forfeit Game</button>`;
         app.innerHTML += backBtn;
+        const userPointsElement = `<p class="user-score">Score: ${userScore}</p>`;
+        app.innerHTML += userPointsElement;
         questions.results.map((question, index) => {
             console.log(question);
             console.log(index);
@@ -50,14 +53,27 @@ export const buildQuestion = (questions) => __awaiter(void 0, void 0, void 0, fu
                 const correctAnswer = questions.results[questionIndex].correct_answer;
                 const answerContainer = clickedBtn.parentElement;
                 const parentContainer = answerContainer.parentElement;
+                const userScoreElm = document.querySelector(".user-score");
                 if (selectedAnswer === correctAnswer) {
-                    console.log("Correct Answer");
                     answerContainer.innerHTML += `<h4 class="correct-answer">Correct Answer</h4>`;
                     parentContainer.classList.add("question-answered-correctly");
+                    correctAnswerStreak++;
+                    userScore += 10;
+                    if (userScoreElm) {
+                        userScoreElm.innerHTML = `Score: ${userScore}`;
+                    }
+                    if (correctAnswerStreak >= 3) {
+                        multiplyer = 2;
+                        userScore += 10 * multiplyer;
+                    }
+                    if (correctAnswerStreak >= 5) {
+                        multiplyer = 3;
+                        userScore += 10 * multiplyer;
+                    }
                 }
                 else {
-                    console.log("Incorrect Answer");
                     answerContainer.innerHTML += `<h4 class="incorrect-answer">Incorrect Answer</h4>`;
+                    correctAnswerStreak = 0;
                     parentContainer.classList.add("question-answered-incorrectly");
                 }
             });

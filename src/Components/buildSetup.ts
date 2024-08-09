@@ -23,6 +23,11 @@ export const buildGameSetup = () => {
         </hgroup>
     </header>
     <span class="questions-container">
+      <label for="username">Enter Username</label>
+      <input id="username" type="text">
+    </span>
+
+    <span class="questions-container">
         <label for="questions-amount">Number of questions: (max 50)</label>
         <input id="questions-amount" type="number" min="1" max="50">
     </span>
@@ -60,6 +65,11 @@ export const buildGameSetup = () => {
     <input type="submit" id="start-game" value="Start Game">`;
     setupContainer.innerHTML += questionsInput;
     app.appendChild(setupContainer);
+
+    const nameInputField = document.getElementById("username");
+    nameInputField?.addEventListener("change", (e) => {
+      const username = e.target.value;
+    })
 
     const categorySelect = document.getElementById("category");
     categorySelect?.addEventListener("change", (e) => {
