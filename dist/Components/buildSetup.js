@@ -1,4 +1,4 @@
-import { clearApp } from "./app.js";
+import { clearApp, createUser } from "./app.js";
 import { getTriviaQuestions } from "./getTriviaQuestions.js";
 let amount;
 let category;
@@ -64,6 +64,7 @@ export const buildGameSetup = () => {
         const nameInputField = document.getElementById("username");
         nameInputField === null || nameInputField === void 0 ? void 0 : nameInputField.addEventListener("change", (e) => {
             const username = e.target.value;
+            createUser(username, 0);
         });
         const categorySelect = document.getElementById("category");
         categorySelect === null || categorySelect === void 0 ? void 0 : categorySelect.addEventListener("change", (e) => {
