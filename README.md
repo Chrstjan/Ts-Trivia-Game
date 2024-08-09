@@ -12,5 +12,5 @@ Modular ES6 Typescript with Scss atom design styling
 # Pages:
 
 Github Page:
-.
+https://chrstjan.github.io/Ts-Trivia-Game/
 Netlify:
