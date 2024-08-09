@@ -1,3 +1,135 @@
+.landing-container .game-header {
+  color: #ffffff;
+  text-align: center;
+}
+
+.setup-container #start-game, .landing-container .game-btn {
+  border: 0;
+  background: transparent;
+  font-size: 22px;
+  background: #eee;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+}
+
+.setup-container .select-container .options-container .game-setup {
+  padding: 0.3rem 2.7rem;
+  border-radius: 6px;
+}
+
+@keyframes titleSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.landing-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.landing-container .game-header .trivia-header {
+  font-size: 33px;
+  width: 300px;
+  position: absolute;
+  top: 3%;
+  left: 10%;
+  transform: translate(-50%);
+  animation: titleSpin 4s infinite linear;
+}
+.landing-container .game-header h3 {
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.setup-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+}
+.setup-container .game-header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+.setup-container .questions-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.setup-container .questions-container #questions-amount {
+  width: 77%;
+  border: none;
+  background: #eee;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+.setup-container .select-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.setup-container .select-container .options-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.setup-container #start-game {
+  margin-top: 2.5rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 2rem;
+  overflow-x: hidden;
+}
+.cards-container .question-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 2rem;
+  border-radius: 5px;
+}
+.cards-container .question-cards.question-answered-correctly {
+  background: green;
+}
+.cards-container .question-cards.question-answered-incorrectly {
+  background: red;
+}
+.cards-container .question-cards header {
+  color: #eee;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -11,4 +143,14 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: sans-serif, Arial, Helvetica;
+}
+.main-container #app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(#20687e, #49a8c6);
+  overflow-x: hidden;
+  position: relative;
 }

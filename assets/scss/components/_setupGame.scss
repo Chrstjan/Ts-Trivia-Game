@@ -1,0 +1,43 @@
+@use "../helpers/mixins" as m;
+@use "../helpers/variables" as v;
+@use "../helpers/placeholders";
+
+.setup-container {
+  height: 100vh;
+  @include m.flexBox(column, center, center);
+  color: v.$main-text-color;
+
+  .game-header {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .questions-container {
+    @include m.flexBox(column, center, center);
+
+    #questions-amount {
+      width: 77%;
+      border: none;
+      background: v.$input-field-background;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+    }
+  }
+
+  .select-container {
+    @include m.flexBox(column, center, center, 1.5rem);
+
+    .options-container {
+      @include m.flexBox(column, center, center);
+
+      .game-setup {
+        @extend %select-styling;
+      }
+    }
+  }
+
+  #start-game {
+    margin-top: 2.5rem;
+    @extend %btn-reset;
+  }
+}

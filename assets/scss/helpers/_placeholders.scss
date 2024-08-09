@@ -1,0 +1,20 @@
+@use "./variables" as v;
+
+%header-reset {
+  color: v.$main-text-color;
+  text-align: center;
+}
+
+%btn-reset {
+  border: 0;
+  background: transparent;
+  font-size: 22px;
+  background: v.$input-field-background;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+}
+
+%select-styling {
+  padding: 0.3rem 2.7rem;
+  border-radius: 6px;
+}

@@ -1,0 +1,27 @@
+@use "../helpers/mixins" as m;
+@use "../helpers/variables" as v;
+@use "../helpers/placeholders";
+
+.cards-container {
+  @include m.flexBox(column, center, center);
+  padding: 0.6rem 2rem;
+  overflow-x: hidden;
+
+  .question-cards {
+    @include m.flexBox(column, center, center);
+    padding: 0.6rem 2rem;
+    border-radius: 5px;
+
+    &.question-answered-correctly {
+      background: v.$correct-question-background;
+    }
+
+    &.question-answered-incorrectly {
+      background: v.$incorrect-question-background;
+    }
+
+    header {
+      color: v.$input-field-background;
+    }
+  }
+}
